@@ -3,9 +3,21 @@
 ## Verify the monitoring installation
 
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
+ 
+   Monitoring Namespace
+
+   ![MonitoringNamespace]{answer-img/kubectl-monitoring.png}
+   
+   Observability Namespace
+   
+   Flask Application 
 
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
+   
+   Grafana Homepage
+   
+   Grafana Source
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
@@ -33,6 +45,16 @@ The following metrics are used, these are selected while considering the Four Go
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
 
+   Frontendapp.py
+   
+   Backendapp.py
+   
+   Jeager Ui
+   
+   Grafana Jeager Trace
+   
+   
+
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
 
@@ -41,72 +63,72 @@ The following metrics are used, these are selected while considering the Four Go
 
 TROUBLE TICKET
 
-Name: Request endpoint star fail throw 405 Method Not Allowed
+  Name: Request endpoint star fail throw 405 Method Not Allowed
 
-Date: Mar 18 2023, 14:50 PM
+  Date: Mar 18 2023, 14:50 PM
 
-Subject: Backend can't acces MongoDB
+  Subject: Backend can't acces MongoDB
 
-Affected Area: Backend Service
+  Affected Area: Backend Service
 
-Severity: High
+  Severity: High
 
-Description: As we port-forwarding the application accessing /star endpoint, it throw 405 error which is caused by the mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb URL is not exist in the cluster. We need to make the MongoDB URL available for the cluster 
+  Description: As we port-forwarding the application accessing /star endpoint, it throw 405 error which is caused by the mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb URL is not exist in the cluster. We need to make the MongoDB URL available for the cluster 
 
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
 
-SLOs:
+  SLOs:
 
-1-99.95% of uptime per month
-2-0.03% of 40x/50x responses per month.
-3-Application responses should be served within 1500 ms per month.
-4-Monthly average CPU usage should be 60% or less.
-5-Monthly average memory usage should not exceed 600Mib.
+  1-99.95% of uptime per month
+  2-0.03% of 40x/50x responses per month.
+  3-Application responses should be served within 1500 ms per month.
+  4-Monthly average CPU usage should be 60% or less.
+  5-Monthly average memory usage should not exceed 600Mib.
 
-SLIs:
+  SLIs:
 
-1-The average 20x or 30x responses of the web application for the month of March 2023 is 97.99%.
-2-1.5% of the total incoming requests had 50x responses for the month of March 2023.
-3-It took an average of 1070 ms for incoming requests to be served for the month of March 2023.
-4-The average CPU usage of the application is 42.65% for the month of March 2023.
-5-The average memory usage of the application is 300Mib for the month of March 2023.
+  1-The average 20x or 30x responses of the web application for the month of March 2023 is 97.99%.
+  2-1.5% of the total incoming requests had 50x responses for the month of March 2023.
+  3-It took an average of 1070 ms for incoming requests to be served for the month of March 2023.
+  4-The average CPU usage of the application is 42.65% for the month of March 2023.
+  5-The average memory usage of the application is 300Mib for the month of March 2023.
 
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-1-The average 20x or 30x responses of the web application for the month of March 2023 is 97.99%.
-* Monthly uptime - this KPI indicates the total usability of the application.
-* 20x code responses per month - this KPI indicates availability of the pages of the application.
-* Monthly traffic - this KPI will indicate the number of requests served by the application.
-2-1.5% of the total incoming requests had 50x responses for the month of March 2023.
-* Monthly downtime - this KPI indicates the number of times the application was down
-* Errors per month - this KPI will indicate the monthly errors encountered in the application.
-* Monthly traffic - this KPI will indicate the number of requests served by the application.
-3-It took an average of 1070 ms for incoming requests to be served for the month of March 2023.
-* Average monthly latency - this KPI will indicate the time it took for the application to respond to requests.
-* Monthly uptime - this KPI indicates the total usability of the application.
-* Monthly traffic - this KPI will indicate the number of requests served by the application.
-4-The average CPU usage of the application is 42.65% for the month of March 2023.
-* Average monthly CPU usage of pod used by the application - this KPI will indicate how much CPU is used by the source pod of the application.
-* Average monthly CPU usage of all the pods - this KPI will indicate how much CPU is used by all the pods required to run the application.
-* Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the CPU quota.
-5-The average memory usage of the application is 300Mib for the month of March 2023.
-* Average monthly memory usage of pod used by the application - this KPI will indicate how much memory is used by the source pod of the application.
-* Average monthly memory usage of all the pods - this KPI will indicate how much memory is used by all the pods required to run the application.
-* Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the memory quota.
+  1-The average 20x or 30x responses of the web application for the month of March 2023 is 97.99%.
+    * Monthly uptime - this KPI indicates the total usability of the application.
+    * 20x code responses per month - this KPI indicates availability of the pages of the application.
+    * Monthly traffic - this KPI will indicate the number of requests served by the application.
+  2-1.5% of the total incoming requests had 50x responses for the month of March 2023.
+    * Monthly downtime - this KPI indicates the number of times the application was down
+    * Errors per month - this KPI will indicate the monthly errors encountered in the application.
+    * Monthly traffic - this KPI will indicate the number of requests served by the application.
+  3-It took an average of 1070 ms for incoming requests to be served for the month of March 2023.
+    * Average monthly latency - this KPI will indicate the time it took for the application to respond to requests.
+    * Monthly uptime - this KPI indicates the total usability of the application.
+    * Monthly traffic - this KPI will indicate the number of requests served by the application.
+  4-The average CPU usage of the application is 42.65% for the month of March 2023.
+    * Average monthly CPU usage of pod used by the application - this KPI will indicate how much CPU is used by the source   pod of the application. 
+    * Average monthly CPU usage of all the pods - this KPI will indicate how much CPU is used by all the pods required to run the application.
+    * Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the CPU quota.
+  5-The average memory usage of the application is 300Mib for the month of March 2023.
+    * Average monthly memory usage of pod used by the application - this KPI will indicate how much memory is used by the source pod of the application.
+    * Average monthly memory usage of all the pods - this KPI will indicate how much memory is used by all the pods required to run the application.
+    * Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the memory quota.
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard. 
 
 
-Description of panel in dashboard:
+  Description of panel in dashboard:
 
-1-Uptime: Uptime of the service, by measuring the number of 20x and 30x responses.
-2-Response Time: Average respond time of the request.
-3-50x Error: 50x respond from our service
-4-40x Error: 40x respond from our service
-5-CPU Usage: CPU utilization by the service
-6-Memory Usage: Memory utilization by the service
+  1-Uptime: Uptime of the service, by measuring the number of 20x and 30x responses.
+  2-Response Time: Average respond time of the request.
+  3-50x Error: 50x respond from our service
+  4-40x Error: 40x respond from our service
+  5-CPU Usage: CPU utilization by the service
+  6-Memory Usage: Memory utilization by the service
