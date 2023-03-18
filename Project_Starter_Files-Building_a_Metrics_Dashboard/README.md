@@ -78,17 +78,22 @@ The following metrics are used, these are selected while considering the Four Go
 
 TROUBLE TICKET
 
-  Name: Request endpoint star fail throw 405 Method Not Allowed
+Name: Error 500
 
-  Date: Mar 18 2023, 14:50 PM
+Date: March 2, 2023
 
-  Subject: Backend can't acces MongoDB
+Subject: Python trial backend throwing 500 errors
 
-  Affected Area: Backend Service
+Affected Area: Job search functionality
 
-  Severity: High
+Severity: High
 
-  Description: As we port-forwarding the application accessing /star endpoint, it throw 405 error which is caused by the mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb URL is not exist in the cluster. We need to make the MongoDB URL available for the cluster 
+Description: The Python trial backend is throwing 500 errors when attempting to search for jobs. The issue seems to be with the "get-python-jobs" endpoint, as the tracer is logging errors there. The trace ID for the request is eb47ea79026dfdde.
+
+<img src="answer-img/span_error.png" alt="ticket" title="ticket">
+
+
+
 
 
 ## Creating SLIs and SLOs
