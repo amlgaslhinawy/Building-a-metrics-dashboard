@@ -6,7 +6,7 @@
  
    Monitoring Namespace
 
-   ![MonitoringNamespace]{/home/amlgaslhinawy/project #3/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/kubectl-monitoring.png}
+   ![MonitoringNamespace](/home/amlgaslhinawy/project #3/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/kubectl-monitoring.png)
    
    Observability Namespace
    
