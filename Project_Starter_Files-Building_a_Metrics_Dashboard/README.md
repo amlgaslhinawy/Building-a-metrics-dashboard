@@ -90,7 +90,6 @@ Severity: High
 
 Description: The Python trial backend is throwing 500 errors when attempting to search for jobs. The issue seems to be with the "get-python-jobs" endpoint, as the tracer is logging errors there. The trace ID for the request is eb47ea79026dfdde.
 
-<img src="answer-img/span_error.png" alt="ticket" title="ticket">
 
 
 
