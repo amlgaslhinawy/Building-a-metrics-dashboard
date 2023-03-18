@@ -9,18 +9,25 @@
 
    
    Observability Namespace
+<img src="answer-img/kubectl-observability.png" alt="observability_namespace" title="observability">
    
    Flask Application 
+<img src="answer-img/kubectl-app.png" alt="flaskapp" title="app">   
+   
 
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
    
    Grafana Homepage
+<img src="answer-img/grafana-homepage.png" alt="Grafana_homepage" title="grafanahomepage">   
    
-   Grafana Source
+   Grafana Sources
+<img src="answer-img/grafana-jaeger-source.png" alt="Grafana_sources" title="Grafana">   
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
+
+<img src="answer-img/grafana-jaeger-dashboard.png" alt="dashboard" title="Dashboard">
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
@@ -42,21 +49,29 @@ The following metrics are used, these are selected while considering the Four Go
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
+<img src="answer-img/dashboard-sli.png" alt="dashboardsli" title="dashboardsli">
+
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
 
    Frontendapp.py
+<img src="answer-img/trace-frontend.png" alt="forntend" title="frontend">   
    
    Backendapp.py
+<img src="answer-img/trace-backend.png" alt="backend" title="backend">   
    
    Jeager Ui
+<img src="answer-img/jaeger-trace.png" alt="jeagertrace" title="jeagertrace">   
    
    Grafana Jeager Trace
+<img src="answer-img/grafana-jaeger-trace.png" alt="gjt" title="gjt">   
    
    
 
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
+
+<img src="answer-img/grafana-jaeger-dashboard.png" alt="gjd" title="gjd">
 
 ## Report Error
 *TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue also include a screenshot of the tracer span to demonstrate how we can user a tracer to locate errors easily.
@@ -122,6 +137,8 @@ TROUBLE TICKET
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard. 
+
+<img src="answer-img/dashboard-final.png" alt="finaldashboard" title="finaldashboard">
 
 
   Description of panel in dashboard:
