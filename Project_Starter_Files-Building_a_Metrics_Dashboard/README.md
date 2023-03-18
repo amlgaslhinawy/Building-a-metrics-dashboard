@@ -5,8 +5,8 @@
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
  
    Monitoring Namespace
+<img src="answer-img/kubectl-monitoring.png" alt="monitoring_namespace" title="monitoring">
 
-   ![MonitoringNamespace](/home/amlgaslhinawy/project #3/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/kubectl-monitoring.png)
    
    Observability Namespace
    
